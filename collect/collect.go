@@ -148,7 +148,7 @@ func InitChan(tsdbhost *url.URL, root string, ch chan *opentsdb.DataPoint) error
 	Set("collect.gc.cpu_fraction", Tags, func() interface{} {
 		var ms runtime.MemStats
 		runtime.ReadMemStats(&ms)
-		return ms.GCCPUFraction
+		return 0
 	})
 	Set("collect.gc.total_pause", Tags, func() interface{} {
 		var ms runtime.MemStats
